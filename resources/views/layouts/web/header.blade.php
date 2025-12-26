@@ -8,7 +8,7 @@
   
         <!-- Desktop Menu (≥1024px) -->
         <nav class="hidden lg:flex space-x-8 text-[20px] font-regular text-[#333333] mb-[40px]">
-          <a href="#" class="hover:text-blue-600">Home</a>
+          <a href="{{ route('home') }}" class="hover:text-blue-600">Home</a>
           <a href="#" class="hover:text-blue-600">How It Works</a>
           <a href="#" class="hover:text-blue-600">Find a Gym</a>
           <a href="#" class="hover:text-blue-600">Become a Host</a>
@@ -19,8 +19,8 @@
   
         <!-- Desktop Buttons (≥1024px) -->
         <div class="hidden lg:flex items-center gap-6 mb-[40px]">
-          <a href="#" class="text-[20px] font-regular text-[var(--text-color)] hover:text-blue-600">Login</a>
-          <a href="#" class="sign-up-btn">Sign Up</a>
+          <a href="{{ route('login') }}" class="text-[20px] font-regular text-[var(--text-color)] hover:text-blue-600">Login</a>
+          <a href="{{ route('register') }}" class="sign-up-btn">Sign Up</a>
         </div>
   
         <!-- Hamburger (<1024px) -->
