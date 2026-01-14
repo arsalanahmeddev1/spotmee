@@ -98,8 +98,6 @@ body {
     @apply px-3 py-2;
 }
 
-
-
 .gym-card-img {
     @apply w-full h-full object-cover rounded-[24px];  
 }
@@ -138,7 +136,6 @@ body {
            transition-all duration-300
            hover:bg-[#3a6d96] hover:shadow-blue-500/30;
 }
-
 
 .footer-link {
     @apply text-[var(--text-color)] text-[18px] font-normal
@@ -193,4 +190,99 @@ body {
 }
 .auth-link {
     @apply text-[#4682B4] font-bold hover:underline;
+}
+
+.inner-heading {
+    @apply text-white text-[30px] md:text-[40px] font-bold mb-8 leading-tight;
+}
+
+/* how it works */
+.how-it-works-banner {
+    @apply relative w-full py-20 bg-cover bg-center rounded-[15px] flex items-center justify-center overflow-hidden;
+}
+.seeker-icon {
+    @apply w-24 h-24 bg-[#EBF1F6] rounded-full flex items-center justify-center mb-6 group-hover:bg-(--primary-color) transition-all duration-300;
+}
+.seeker-card {
+    @apply flex flex-col items-center text-center ;
+}   
+.feature-card {
+    @apply bg-white p-8 rounded-[24px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow;
+}   
+
+.feature-icon {
+    @apply w-16 h-16 bg-[#EBF1F6] rounded-2xl flex items-center justify-center mb-6;
+}
+.feature-title {
+    @apply text-[22px] font-bold mb-3;
+}
+.host-title {
+    @apply font-bold text-[20px] text-(--text-color);
+}
+.cta-section {
+    @apply relative w-full h-[450px] bg-cover bg-center rounded-[30px] overflow-hidden flex items-center justify-center;
+}
+
+/* find a gym */
+.find-a-gym {
+    @apply bg-[#F8FAFC] rounded-[24px] p-8 md:p-12 relative overflow-hidden;
+}
+.find-a-gym-search {
+    @apply bg-white p-3 rounded-[20px] shadow-2xl flex flex-col md:flex-row gap-3;
+}
+
+.search-input {
+    @apply flex-1 flex items-center px-4 bg-gray-50 rounded-[15px];
+}
+.search-input-icon {
+    @apply text-(--primary-color) mr-3 text-lg;
+}
+.search-input-input {
+    @apply w-full py-4 bg-transparent outline-none text-gray-700 font-medium;
+}
+.gym-type-label {
+    @apply flex items-center gap-3 cursor-pointer  p-2  rounded-lg transition-colors;
+    &:hover {
+        @apply bg-gray-50;
+    }
+}
+.type-checkbox {
+    @apply w-5 h-5 rounded border-gray-300 text-(--primary-color) focus:ring-(--primary-color);
+}
+.type-checkbox-label {
+    @apply text-gray-600 font-medium group-hover:text-(--text-color);
+}
+
+.sidebar-title {
+    @apply font-bold mb-4 text-(--text-color) flex items-center gap-2;
+}
+.amenities-label {
+    @apply flex items-center gap-2 cursor-pointer  text-sm;
+}
+.amenities-checkbox {
+    @apply w-4 h-4 rounded border-gray-300 text-(--primary-color) focus:ring-(--primary-color);
+}
+.apply-filters-btn {
+    @apply w-full py-4 bg-[#F3F4F6] text-(--text-color) font-bold rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2;
+}
+.sort-bar {
+    @apply bg-white rounded-[20px] p-6 mb-8 border border-gray-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4;
+}
+
+.benefit-card {
+    @apply  p-8 rounded-[30px] transition-all duration-500 border border-transparent hover:border-gray-50;
+    &:hover {
+        @apply bg-white shadow-2xl shadow-blue-500/5;
+    }
+}
+
+.benefit-icon {
+    @apply w-20 h-20 bg-[#EBF1F6] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors duration-500;
+}
+.step-number {
+    @apply shrink-0 w-12 h-12 bg-(--primary-color) text-white rounded-full flex items-center justify-center font-bold text-xl;
+}
+
+.step-title {
+    @apply text-xl font-bold mb-2;;
 }

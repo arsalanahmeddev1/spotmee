@@ -21,14 +21,34 @@ Route::get(
 )->name('home');
 
 Route::get(
+    '/find-a-gym',
+    fn() => view('screens.web.find-a-gym.index')
+)->name('find-a-gym');
+
+Route::get(
     '/about',
     fn() => view('screens.web.about.index')
 )->name('about');
 
 Route::get(
+    '/become-a-host',
+    fn() => view('screens.web.become-a-host.index')
+)->name('become-a-host');
+
+Route::get(
+    '/how-it-works',
+    fn() => view('screens.web.how-it-works.index')
+)->name('how-it-works');
+
+Route::get(
     '/contact',
     fn() => view('screens.web.contact.index')
 )->name('contact');
+
+Route::get(
+    '/blog',
+    fn() => view('screens.web.blog.index')
+)->name('blog');
 
 Route::get('/services', [ServiceController::class, 'userIndex'])->name('services');
 

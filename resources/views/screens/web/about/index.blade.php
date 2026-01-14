@@ -1,169 +1,146 @@
 @extends('layouts.web.master')
-@section('title', 'About Us')
+@section('title', 'About Us - SPOTMEE')
 @section('content')
 
-<!-- About Us Section -->
-<section class="inner-banner about-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="hd-lg">About Us</h1>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="about-us-sec sec-dark-bg sec-gap">
-    <div class="container">
-        <div class="row align-items-center row-gap-40">
-            <div class="col-lg-6">
-                <div class="img-wrapper">
-                    <img src="{{ asset('images/img-01.webp') }}" alt="About Us" class="radius-20 w-100">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h2 class="hd-lg hd-md mb-30">About Us</h2>
-                <p class="para mb-30">
-                    At League Of Contractors, we believe contractors deserve more than just leads they deserve partners. We're a team of dedicated professionals who understand the challenges you face every day: securing new projects, managing workflow, building your reputation, and growing your business without compromising quality.
-                </p>
-                <h2 class="hd-lg hd-md mb-20">Who We Are</h2>
-                <p class="para">
-                    We're not just a digital service agency we're your growth engine. Founded by people who've worked in construction, marketing, and design, we know both sides: what makes a strong foundation and what makes a brand shine. We bring together branding, web design, printing, lead generation, and marketing so you can focus on what you do best building, improving, creating.
+<main class="spotmee-main">
+    <!-- Inner Banner -->
+    <div class="px-5">
+        <section class="relative w-full py-20 bg-cover bg-center rounded-[15px] flex items-center justify-center overflow-hidden" 
+                 style="background-image: url('{{ asset('images/banner-img.png') }}'); min-height: 400px;">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-white text-[45px] md:text-[65px] font-bold mb-4 leading-tight" data-aos="fade-down">
+                    Our <span class="text-(--primary-color)">Story</span>
+                </h1>
+                <p class="text-white text-[20px] md:text-[24px] max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="200">
+                    Revolutionizing the way people workout by making private gyms accessible to everyone.
                 </p>
             </div>
-        </div>
+        </section>
     </div>
-</section>
 
-<!-- What We Do Section -->
-<section class="what-we-do-sec sec-dark-bg sec-gap">
-    <div class="container">
-        <div class="row row-gap-40 mb-60">
-            <div class="col-12 text-center">
-                <h2 class="hd-lg mb-20">What We Do?</h2>
-                <p class="para">Here's how we help contractors succeed.</p>
-            </div>
-        </div>
-        <div class="row row-gap-40">
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/join.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">01</h1>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/refer.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">02</h1>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/build.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">03</h1>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/join.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">04</h1>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/refer.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">05</h1>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="hiw-card">
-                    <div class="glass circle-md circle-lg mb-40">
-                        <img src="{{ asset('images/icons/build.svg') }}" alt="">
-                    </div>
-                    <h4 class="hd-lg hd-md mb-20">Join</h4>
-                    <p class="para ">
-                        Register as a licensed contractor, submit your credentials, and get verified by our admin team.
-                    </p>
-                    <h1 class="outline-heading">06</h1>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Let's Build Something Together Section -->
-<section class="lets-build-sec sec-dark-bg sec-gap-y">
-    <div class="container">
-        <div class="row align-items-center row-gap-40">
-            <div class="col-lg-6">
-                <h2 class="hd-lg hd-md mb-30">Let's Build Something Together</h2>
-                <p class="para mb-40">
-                    At League Of Contractors, we believe contractors deserve more than just leads they deserve partners. We're a team of dedicated professionals who understand the challenges you face every day: securing new projects, managing workflow, building your reputation, and growing your business without compromising quality.
+    <!-- Mission & Vision -->
+    <section class="container mx-auto px-4 py-24 lg:py-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="heading mb-8">Redefining the <br> <span class="text-(--primary-color)">Fitness Experience</span></h2>
+                <p class="md-para mb-6 text-gray-600 leading-relaxed">
+                    At SPOTMEE, we believe that everyone deserves a focused, private, and high-quality workout environment. Our journey began with a simple observation: public gyms are often overcrowded, intimidating, and require long-term commitments that don't fit everyone's lifestyle.
                 </p>
-                <ul class="secondary-list">
-                    <li>
-                        <h4 class="secondary-list-title">Purpose Over Profit</h4>
-                        <p class="para">We want to see your business succeed, not just collect fees. When you grow, we grow.</p>
-                    </li>
-                    <li>
-                        <h4 class="secondary-list-title">Quality & Craftsmanship</h4>
-                        <p class="para">Just like you invest in good materials and skilled labor, we invest time, insight, and precision in every piece of work your website, your brand identity, your client experience.</p>
-                    </li>
-                    <li>
-                        <h4 class="secondary-list-title">Clear Communication</h4>
-                        <p class="para">No jargon, no fluff. We keep things upfront deadlines, pricing, expectations. You'll always know where things stand.</p>
-                    </li>
-                    <li>
-                        <h4 class="secondary-list-title">Innovation with Integrity</h4>
-                        <p class="para">We stay current with design trends, marketing strategies, and digital tools but never at the expense of honesty and transparency.</p>
-                    </li>
-                </ul>
-                <div class="mt-40">
-                    <a href="" class="btn btn-primary">Become Contractor</a>
+                <p class="md-para mb-10 text-gray-600 leading-relaxed">
+                    We've created a community-driven marketplace that connects fitness enthusiasts with unique private home gyms. Whether you're a trainer looking for a professional space for your clients or someone who simply prefers training in peace, SPOTMEE is your gateway to the perfect workout.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-3xl font-bold text-(--primary-color) mb-1">500+</h4>
+                        <p class="text-gray-500 font-medium">Active Hosts</p>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-bold text-(--primary-color) mb-1">10k+</h4>
+                        <p class="text-gray-500 font-medium">Happy Users</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="img-wrapper">
-                    <img src="{{ asset('images/img-01.webp') }}" alt="Let's Build Something Together" class="radius-20 w-100">
+            <div class="relative" data-aos="fade-left">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-(--primary-color)/10 rounded-full blur-3xl"></div>
+                <img src="{{ asset('images/work-img-3.png') }}" alt="Our Gym Community" class="relative z-10 w-full rounded-[40px] shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-[24px] shadow-xl z-20 hidden md:block">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-(--text-color)">Verified Quality</p>
+                            <p class="text-xs text-gray-400">Premium Standards</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="bg-[#F8FAFC] py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="heading">The Values That <br> <span class="text-(--primary-color)">Drive Us</span></h2>
+                <p class="md-para max-w-2xl mx-auto">Built on trust, accessibility, and a passion for fitness.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                        <i class="fas fa-heart text-2xl text-(--primary-color) group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Passion</h3>
+                    <p class="text-gray-500 leading-relaxed">We are passionate about helping people achieve their fitness goals in an environment that empowers them.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                        <i class="fas fa-shield-alt text-2xl text-(--primary-color) group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Trust & Safety</h3>
+                    <p class="text-gray-500 leading-relaxed">Security is our priority. From verified hosts to secure payments, we ensure a safe experience for everyone.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                        <i class="fas fa-users text-2xl text-(--primary-color) group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Community</h3>
+                    <p class="text-gray-500 leading-relaxed">We're building a network of hosts and users who support each other in their fitness journeys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Vision -->
+    <section class="container mx-auto px-4 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1" data-aos="fade-right">
+                <div class="relative">
+                    <img src="{{ asset('images/community-img-001.png') }}" alt="Founder" class="w-full rounded-[40px] shadow-2xl">
+                    <div class="absolute inset-0 bg-linear-to-t from-(--text-color)/60 to-transparent rounded-[40px]"></div>
+                    <div class="absolute bottom-10 left-10 text-white">
+                        <h4 class="text-2xl font-bold">John Doe</h4>
+                        <p class="text-white/80">Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2" data-aos="fade-left">
+                <h2 class="heading mb-8">A Note From <br> <span class="text-(--primary-color)">Our Founder</span></h2>
+                <p class="text-xl italic text-gray-500 mb-8 leading-relaxed">
+                    "SPOTMEE was born out of a personal frustration with the traditional gym model. I wanted a space where I could focus, use the equipment I needed, and not feel the pressure of a crowded environment. By opening up private gyms to the community, we're not just providing a place to workout—we're creating opportunities for people to own their fitness journey."
+                </p>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="px-5 mb-24">
+        <section class="relative w-full py-20 bg-(--primary-color) rounded-[40px] overflow-hidden text-center">
+            <div class="relative z-10 px-4">
+                <h2 class="text-white text-[35px] md:text-[55px] font-extrabold mb-8 leading-tight" data-aos="fade-up">
+                    Ready to join the <br> SPOTMEE community?
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="{{ route('how-it-works') }}" class="px-12 py-4 bg-white text-(--primary-color) font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl">Find a Gym</a>
+                    <a href="{{ route('become-a-host') }}" class="px-12 py-4 bg-(--text-color) text-white font-bold rounded-full hover:bg-black transition-all shadow-xl">Become a Host</a>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
+</main>
 
 @endsection
+
+@push('scripts')
+<script>
+    // AOS is already initialized
+</script>
+@endpush
