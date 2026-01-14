@@ -9,7 +9,7 @@
                  style="background-image: url('{{ asset('images/banner-img.png') }}'); min-height: 400px;">
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="relative z-10 text-center px-4">
-                <h1 class="text-white text-[45px] md:text-[65px] font-bold mb-4 leading-tight" data-aos="fade-down">
+                <h1 class="inner-heading" data-aos="fade-down">
                     Our <span class="text-(--primary-color)">Story</span>
                 </h1>
                 <p class="text-white text-[20px] md:text-[24px] max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="200">
@@ -24,10 +24,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
                 <h2 class="heading mb-8">Redefining the <br> <span class="text-(--primary-color)">Fitness Experience</span></h2>
-                <p class="md-para mb-6 text-gray-600 leading-relaxed">
+                <p class="md-para !mb-6">
                     At SPOTMEE, we believe that everyone deserves a focused, private, and high-quality workout environment. Our journey began with a simple observation: public gyms are often overcrowded, intimidating, and require long-term commitments that don't fit everyone's lifestyle.
                 </p>
-                <p class="md-para mb-10 text-gray-600 leading-relaxed">
+                <p class="md-para">
                     We've created a community-driven marketplace that connects fitness enthusiasts with unique private home gyms. Whether you're a trainer looking for a professional space for your clients or someone who simply prefers training in peace, SPOTMEE is your gateway to the perfect workout.
                 </p>
                 <div class="grid grid-cols-2 gap-8">
@@ -69,29 +69,29 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Value 1 -->
-                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                <div class="value-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
                         <i class="fas fa-heart text-2xl text-(--primary-color) group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Passion</h3>
+                    <h3 class="vission-title">Passion</h3>
                     <p class="text-gray-500 leading-relaxed">We are passionate about helping people achieve their fitness goals in an environment that empowers them.</p>
                 </div>
 
                 <!-- Value 2 -->
-                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                <div class="value-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
                         <i class="fas fa-shield-alt text-2xl text-(--primary-color) group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Trust & Safety</h3>
+                    <h3 class="vission-title">Trust & Safety</h3>
                     <p class="text-gray-500 leading-relaxed">Security is our priority. From verified hosts to secure payments, we ensure a safe experience for everyone.</p>
                 </div>
 
                 <!-- Value 3 -->
-                <div class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-(--primary-color)/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-(--primary-color) transition-colors">
+                <div class="value-card group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
                         <i class="fas fa-users text-2xl text-(--primary-color) group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-(--text-color)">Community</h3>
+                    <h3 class="vission-title">Community</h3>
                     <p class="text-gray-500 leading-relaxed">We're building a network of hosts and users who support each other in their fitness journeys.</p>
                 </div>
             </div>
