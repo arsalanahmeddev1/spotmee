@@ -44,6 +44,15 @@ class CmsModuleSeeder extends Seeder
             'status' => 'active',
             'parent_id' => 0,
         ]);
+        $gyms = CmsModule::firstOrCreate([
+            'route_name' => 'gyms-module'
+        ], [
+            'name' => 'Gyms',
+            'icon' => 'fa-solid fa-users',
+            'sort_order' => 4,
+            'status' => 'active',
+            'parent_id' => 0,
+        ]);
        
 
         // submenus 
@@ -67,6 +76,15 @@ class CmsModuleSeeder extends Seeder
             'sort_order' => 1,
             'status' => 'active',
             'parent_id' => $hosts->id,
+        ]);
+        CmsModule::firstOrCreate([
+            'route_name' => 'gyms.index'
+        ], [
+            'name' => 'All Gyms',
+            'icon' => 'fa-solid fa-list-ul',
+            'sort_order' => 1,
+            'status' => 'active',
+            'parent_id' => $gyms->id,
         ]);
     }
 }

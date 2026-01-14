@@ -21,8 +21,8 @@ class DashboardController extends Controller
       if ($user->hasRole(config('roles.user'))) {
         return view('screens.admin.dashboard.user');
       }
-      if ($user->hasRole(config('roles.company'))) {
-        return view('screens.admin.dashboard.league-contractor');
+      if ($user->hasRole(config('roles.host'))) {
+        return view('screens.admin.dashboard.host');
       }
 
       abort(403, 'No dashboard assigned to this role');

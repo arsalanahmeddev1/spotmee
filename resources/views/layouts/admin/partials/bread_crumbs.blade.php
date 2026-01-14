@@ -3,26 +3,18 @@
         <div class="row">
             <div class="row mb-3">
                 <div class="col-12">
-                    @if (auth()->user()->hasRole(config('roles.company')))
-                        @if (!$company || !$company->is_profile_completed)
-                            <div class="alert alert-warning custom-alert alert-dismissible fade show d-flex align-items-center justify-content-between"
-                                role="alert" style="background-color: #1d1d1d; border-color: #ffc107; color: #fff;">
-                                <div class="d-flex align-items-center"> <i class="fa-solid fa-exclamation-triangle me-2"
-                                        style="color: #ffc107;"></i> <span>Please complete your profile To Activate
-                                        Services and add Contractors</span> </div> <a
-                                    href="{{ route('company-profile.index') }}" class="btn btn-warning btn-sm"
-                                    style="min-width: 140px;">Complete Profile</a>
-                            </div>
-                        @elseif($company->is_profile_completed && !$company->is_profile_approved)
-                            <div class="alert alert-info" style="background:#1d1d1d; border-color:#0dcaf0; color:#fff;">
-                                <i class="fa-solid fa-hourglass-half"></i> Your profile has been submitted for approval.
-                                Once approved, you can add Services and Contractors. </div>
-                        @elseif(!$company->is_active)
+                    @if (auth()->user()->hasRole(config('roles.host')))
+                        {{-- @if ($company->is_profile_completed) --}}
+                        <div class="alert alert-info" style="background:#1d1d1d; border-color:#0dcaf0; color:#fff;">
+                            <i class="fa-solid fa-hourglass-half"></i>Your profile is currently under review. You’ll be
+                            able to host gyms once approval is complete.
+                        </div>
+                        {{-- @elseif(!$company->is_active)
                             <div class="alert alert-danger"
                                 style="background:#1d1d1d; border-color:#0dcaf0; color:#fff;"> <i
                                     class="fa-solid fa-hourglass-half"></i> Your profile Deactivated By Admin. Please
                                 contact support to reactivate your profile. </div>
-                        @endif
+                        @endif --}}
                     @endif
                 </div>
             </div>

@@ -35,38 +35,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         return view('screens.admin.hosts.index');
     })->name('hosts.index');
     Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships.index');
-    Route::middleware(['auth', 'company.approved'])->group(function () {
-        Route::get('/contractors', [ContractorController::class, 'index'])->name('contractors.index');
-        Route::get('/contractors/create', [ContractorController::class, 'create'])->name('contractors.create');
-        Route::post('/contractors', [ContractorController::class, 'store'])->name('contractors.store');
-        Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
-        Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
-        Route::get('/services/edit/{id}', [ServiceController::class, 'edit'])->name('services.edit');
-        Route::put('/services/update/{id}', [ServiceController::class, 'update'])->name('services.update');
-        Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
-    });
-    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
-    Route::post('/services/delete-image', [ServiceController::class, 'deleteImage'])->name('services.deleteImage');
     Route::middleware(['auth', 'admin.middleware'])->group(function () {
         Route::get('/users', [UsersController::class, 'index'])->name('users.index');
         Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
-       
-        Route::get('/services/categories/create', [AdminServiceCategoryController::class, 'create'])->name('services-categories.create');
-        Route::get('/services/categories', [AdminServiceCategoryController::class, 'index'])->name('services-categories.index');
-        Route::post('/services/categories', [AdminServiceCategoryController::class, 'store'])->name('services-categories.store');
-        Route::delete('/services/categories/{id}', [AdminServiceCategoryController::class, 'destroy'])->name('services-categories.destroy');
-        Route::put('/services/categories/{id}', [AdminServiceCategoryController::class, 'update'])->name('services-categories.update');
     });
-    Route::get('/referrals', [ReferralController::class, 'index'])->name('referrals.index');
-    Route::get('/referrals/create', [ReferralController::class, 'create'])->name('referrals.create');
-    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('/complete-profile', [CompanyController::class, 'index'])->name('company-profile.index');
-    Route::post('/complete-profile', [CompanyController::class, 'store'])->name('company-profile.store');
-    Route::get('/contractor-approval', [AdminContractorApprovalController::class, 'index'])->name('contractor-approval.index');
-    Route::post('/admin/contractor-approval/toggle', [AdminContractorApprovalController::class, 'ajaxToggle'])->name('admin.contractor-approval.ajax');
-    Route::post('/company/toggle-active', [CompanyController::class, 'toggleActive'])->name('company.toggleActive');
 });
 
 

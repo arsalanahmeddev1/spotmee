@@ -25,7 +25,7 @@ class LoginResponse implements LoginResponseContract
         if ($user->hasRole(config('roles.user'))) {
             return redirect('/');
         }
-        if ($user->hasRole(config('roles.company'))) {
+        if ($user->hasRole(config('roles.host'))) {
             return redirect('/admin');
         }
 

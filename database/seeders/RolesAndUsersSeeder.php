@@ -22,6 +22,9 @@ class RolesAndUsersSeeder extends Seeder
         $userRole = Role::firstOrCreate(
             ['name' => 'user', 'guard_name' => 'web']
         );
+        $hostRole = Role::firstOrCreate(
+            ['name' => 'host', 'guard_name' => 'web']
+        );
 
         $admin = User::firstOrCreate(
             ['email' => 'admin@gmail.com'],
@@ -40,5 +43,14 @@ class RolesAndUsersSeeder extends Seeder
             ]
         );
         $user->assignRole($userRole);
+        
+        $host = User::firstOrCreate(
+            ['email' => 'host@gmail.com'],
+            [
+                'name' => 'host',
+                'password' => Hash::make('host@123'),
+            ]
+        );
+        $host->assignRole($hostRole);
     }
 }

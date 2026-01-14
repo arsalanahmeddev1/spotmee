@@ -29,6 +29,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+            'intent' => ['required', Rule::in(['become_host', 'become_user'])],
         ])->validate();
 
         $user = User::create([
@@ -36,7 +37,14 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
-        $user->assignRole(config('roles.user'));
+        if ($input['intent'] === 'become_host') {
+            $user->assignRole(config('roles.host'));
+            $user->approval_status = 'pending';
+        } else {
+            $user->assignRole(config('roles.user'));
+            $user->approval_status = 'approved';
+        }
+        
         return $user;
     }
 }
