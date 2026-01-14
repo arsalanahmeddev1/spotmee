@@ -127,7 +127,7 @@
                             <textarea rows="5" placeholder="How can we help you?" class="contact-input resize-none"></textarea>
                         </div>
 
-                        <button class="w-full py-4 bg-(--primary-color) text-white font-bold rounded-2xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all">
+                        <button class="w-full py-4 bg-(--primary-color) text-[#ffffff] font-bold rounded-2xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all">
                             Send Message
                         </button>
                     </form>
