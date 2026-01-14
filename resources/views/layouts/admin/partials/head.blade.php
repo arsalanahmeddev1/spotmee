@@ -43,9 +43,9 @@
 
 <title>
     @hasSection('title')
-    @yield('title') || League Of Contractors
+    @yield('title') || Spotmee
     @else
-    Dashboard | League Of Contractors
+    Dashboard | Spotmee
     @endif
 
     @hasSection('page_heading')

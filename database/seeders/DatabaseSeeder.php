@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
          CmsModuleSeeder::class,
          CmsModulePermissions::class,
          PackageSeeder::class,
-         ServciceCategories::class,
        ]);
     }
 }

@@ -57,15 +57,6 @@ class CmsModuleSeeder extends Seeder
             'status' => 'active',
             'parent_id' => $users->id,
         ]);
-        CmsModule::firstOrCreate([
-            'route_name' => 'users.create'
-        ], [
-            'name' => 'Add User',
-            'icon' => 'fa-solid fa-circle-plus',
-            'sort_order' => 2,
-            'status' => 'active',
-            'parent_id' => $users->id,
-        ]);
 
         // users submenu end
         CmsModule::firstOrCreate([
@@ -74,15 +65,6 @@ class CmsModuleSeeder extends Seeder
             'name' => 'All Hosts',
             'icon' => 'fa-solid fa-list-ul',
             'sort_order' => 1,
-            'status' => 'active',
-            'parent_id' => $hosts->id,
-        ]);
-        CmsModule::firstOrCreate([
-            'route_name' => 'hosts.create'
-        ], [
-            'name' => 'Add Host',
-            'icon' => 'fa-solid fa-circle-plus',
-            'sort_order' => 2,
             'status' => 'active',
             'parent_id' => $hosts->id,
         ]);

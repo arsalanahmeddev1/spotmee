@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2>Welcome to League of Contractors</h2>
+<h2>Spotmee</h2>
 
 <p>Hi {{ $user->name }},</p>
 
@@ -25,7 +25,7 @@
     </a>
 </p>
 
-<p>Thank you,<br>League of Contractors Team</p>
+<p>Thank you,<br>Spotmee Team</p>
 
 </body>
 </html>

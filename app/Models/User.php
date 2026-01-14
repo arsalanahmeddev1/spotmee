@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Subscription;
-use App\Models\Company;
 
 class User extends Authenticatable
 {
@@ -50,17 +49,6 @@ class User extends Authenticatable
     {
         return $this->hasOne(Subscription::class);
     }
-
-    public function company()
-    {
-        return $this->hasOne(Company::class);
-    }
-
-    public function companyContractor()
-    {
-        return $this->hasOne(CompanyContractor::class);
-    }
-
 
     public function creator()
     {
