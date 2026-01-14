@@ -20,6 +20,10 @@ Route::get(
     fn() => view('screens.web.home.index', ['isHome' => true])
 )->name('home');
 
+Route::get(
+    '/profile',
+    fn() => view('screens.web.profile.index')
+)->middleware('auth')->name('profile');
 
 // admin routes
 Route::prefix('admin')->middleware('auth')->group(function () {

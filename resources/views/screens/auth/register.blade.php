@@ -40,19 +40,25 @@
                                         class="auth-input"
                                         placeholder="Enter your phone number" required>
                                 </div>
-
                                 <div class="mb-5">
                                     <label for="password" class="auth-label">Password</label>
                                     <input type="password" id="password" name="password" 
                                         class="auth-input"
                                         placeholder="Create a password" required>
                                 </div>
-
                                 <div class="mb-5">
                                     <label for="password_confirmation" class="auth-label">Confirm Password</label>
                                     <input type="password" id="password_confirmation" name="password_confirmation"
                                         class="auth-input" 
                                         placeholder="Confirm password" required>
+                                </div>
+                                <div class="mb-5 col-span-2">
+                                    <label for="password" class="auth-label">I want to</label>
+                                    <select name="intent" id="intent" class="auth-input">
+                                        <option value="">Select an option</option>
+                                        <option value="become_host">Become a Host</option>
+                                        <option value="book_gym">Book a Gym</option>
+                                    </select>
                                 </div>
                             </div>
 
