@@ -12,4 +12,7 @@ class GymController extends Controller
     public function create() {
         return view('screens.admin.gyms.create');
     }
+    public function edit() {
+        return view('screens.admin.gyms.edit');
+    }
 }

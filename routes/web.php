@@ -69,7 +69,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // every user can access these pages dashboard 
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders', [OrderControlssler::class, 'index'])->name('orders.index');
     Route::post('/admin/users', [AdminUsersController::class, 'ajaxToggle'])->name('admin.users.approval');
     Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships.index');
 
@@ -85,6 +85,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::middleware(['auth', 'host.middleware'])->group(function () {
         Route::get('/gyms', [GymController::class, 'index'])->name('gyms.index');
         Route::get('/gyms/create', [GymController::class, 'create'])->name('gyms.create');
+        Route::get('/gyms/edit', [GymController::class, 'edit'])->name('gyms.edit');
+
     });
 
     

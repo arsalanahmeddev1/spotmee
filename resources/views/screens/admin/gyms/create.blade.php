@@ -16,9 +16,9 @@
                 <div class="row custom-input">
                     <div class="col-sm-6 col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
+                            <label class="form-label" for="name">Gym Name <span class="text-danger">*</span></label>
                             <input class="form-control @error('name') is-invalid @enderror" id="name"
-                                type="text" placeholder="Enter Name" name="name" />
+                                type="text" placeholder="e.g. The Strength Studio" name="name" />
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -26,19 +26,66 @@
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="email">Email Address <span
-                                    class="text-danger">*</span></label><input class="form-control" id="email"
-                                type="email" placeholder="Enter Email Address" name="email" />
+                            <label class="form-label" for="phone">Phone <span class="text-danger">*</span></label>
+                            <input class="form-control @error('phone') is-invalid @enderror" id="phone"
+                                type="text" placeholder="e.g. +1 234 567 890" name="phone" />
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="name">Phone <span class="text-danger">*</span></label>
-                            <input class="form-control @error('phone') is-invalid @enderror" id="phone"
-                                type="text" placeholder="Enter Name" name="phone" />
-                            @error('phone')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <label class="form-label" for="price">Price (per session) <span class="text-danger">*</span></label>
+                            <input class="form-control @error('price') is-invalid @enderror" id="price"
+                                type="number" step="0.01" placeholder="e.g. 18.00" name="price" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="category">Category <span class="text-danger">*</span></label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="">Select Category</option>
+                                <option value="garage_gym">Garage Gym</option>
+                                <option value="fitness_room">Modern Fitness Room</option>
+                                <option value="yoga_studio">Yoga Studio</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h6 class="my-3">Location Details</h6>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="street">Street Address <span class="text-danger">*</span></label>
+                            <input class="form-control" id="street" type="text" placeholder="e.g. 123 Main St" name="street_address" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="city">City <span class="text-danger">*</span></label>
+                            <input class="form-control" id="city" type="text" placeholder="e.g. Dallas" name="city" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="state">State <span class="text-danger">*</span></label>
+                            <input class="form-control" id="state" type="text" placeholder="e.g. TX" name="state" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="zip">Zip Code</label>
+                            <input class="form-control" id="zip" type="text" placeholder="e.g. 75001" name="zip_code" />
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="image">Gym Image</label>
+                            <input class="form-control" id="image" type="file" name="image" />
                         </div>
                     </div>
                 </div>
