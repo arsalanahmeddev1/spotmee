@@ -35,4 +35,20 @@ class UsersController extends Controller
             return redirect()->route('users.index')->with('success', 'User created successfully');
         }
     }
+
+    public function ajaxToggle(Request $request)
+    {
+        $host = User::findOrFail($request->id);
+
+        $host->approval_status = $request->status;
+
+        $host->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => $request->status === 'approved'
+            ? 'Profile Approved'
+            : 'Profile Rejected'
+        ]);
+    }
 }

@@ -57,7 +57,7 @@
                                     <select name="intent" id="intent" class="auth-input">
                                         <option value="">Select an option</option>
                                         <option value="become_host">Become a Host</option>
-                                        <option value="become_user">Become a Gym</option>
+                                        <option value="become_user">Become a User</option>
                                     </select>
                                 </div>
                             </div>

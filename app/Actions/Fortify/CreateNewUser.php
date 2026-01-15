@@ -44,7 +44,7 @@ class CreateNewUser implements CreatesNewUsers
             $user->assignRole(config('roles.user'));
             $user->approval_status = 'approved';
         }
-        
+        $user->save();
         return $user;
     }
 }

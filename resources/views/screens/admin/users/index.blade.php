@@ -63,6 +63,32 @@
                                                         </a>
                                                     </div>
                                                 </td>
+                                                <td>
+                                                    <div class="form-check form-switch form-check-inline custom-switch">
+                                                        {{-- <input
+                                                            class="form-check-input switch-primary check-size approve-toggle"
+                                                            type="checkbox" role="switch" data-id="{{ $user->id }}"
+                                                            {{ $user->approval_status === 'approved' ? 'checked' : '' }}
+                                                            {{ $user->approval_status === 'pending' ? 'disabled' : '' }}
+                                                            > --}}
+                                                        <select class="form-select approval-select"
+                                                            data-id="{{ $user->id }}"
+                                                            data-current="{{ $user->approval_status }}">
+                                                            <option value="pending"
+                                                                {{ $user->approval_status === 'pending' ? 'selected' : '' }}>
+                                                                Pending
+                                                            </option>
+                                                            <option value="approved"
+                                                                {{ $user->approval_status === 'approved' ? 'selected' : '' }}>
+                                                                Approved
+                                                            </option>
+                                                            <option value="rejected"
+                                                                {{ $user->approval_status === 'rejected' ? 'selected' : '' }}>
+                                                                Rejected
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         @empty
                                             <tr>
@@ -80,9 +106,59 @@
             </div>
         </div>
     </div>
-    {{-- @push('scripts')
-    <script>
-        ajaxCreate('#createUserForm', "{{ route('users.index') }}");
-    </script>
-    @endpush --}}
 @endsection
+@push('scripts')
+    <script>
+        $(document).on('change', '.approval-select', function() {
+
+            let select = $(this);
+            let userId = select.data('id');
+            let previousValue = select.data('current');
+            let status = select.val();
+
+            let titleText = 'Update status?';
+            if (status === 'approved') titleText = 'Approve this user?';
+            if (status === 'rejected') titleText = 'Reject this user?';
+
+            Swal.fire({
+                title: titleText,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, Continue",
+                cancelButtonText: "Cancel",
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ route('admin.users.approval') }}",
+                        type: "POST",
+                        data: {
+                            id: userId,
+                            status: status,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(res) {
+
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success",
+                                text: res.message,
+                                timer: 1200
+                            });
+
+                            // update current value
+                            select.data('current', status);
+                        }
+                    });
+
+                } else {
+                    // revert to old value
+                    select.val(previousValue);
+                }
+
+            });
+
+        });
+    </script>
+@endpush

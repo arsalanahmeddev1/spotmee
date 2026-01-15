@@ -74,15 +74,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::middleware(['auth', 'admin.middleware'])->group(function () {
         Route::get('/users', [UsersController::class, 'index'])->name('users.index');
         Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
-        Route::get('/services/categories/create', [AdminServiceCategoryController::class, 'create'])->name('services-categories.create');
-        Route::get('/services/categories', [AdminServiceCategoryController::class, 'index'])->name('services-categories.index');
-        Route::post('/services/categories', [AdminServiceCategoryController::class, 'store'])->name('services-categories.store');
-        Route::delete('/services/categories/{id}', [AdminServiceCategoryController::class, 'destroy'])->name('services-categories.destroy');
-        Route::put('/services/categories/{id}', [AdminServiceCategoryController::class, 'update'])->name('services-categories.update');
     });
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('/contractor-approval', [AdminContractorApprovalController::class, 'index'])->name('contractor-approval.index');
-    Route::post('/admin/contractor-approval/toggle', [AdminContractorApprovalController::class, 'ajaxToggle'])->name('admin.contractor-approval.ajax');
+    Route::post('/admin/users', [UsersController::class, 'ajaxToggle'])->name('admin.users.approval');
 });
 
 

@@ -4,11 +4,12 @@
             <div class="row mb-3">
                 <div class="col-12">
                     @if (auth()->user()->hasRole(config('roles.host')))
-                        {{-- @if ($company->is_profile_completed) --}}
+                        @if ($user->approval_status === 'pending')
                         <div class="alert alert-info" style="background:#1d1d1d; border-color:#0dcaf0; color:#fff;">
                             <i class="fa-solid fa-hourglass-half"></i>Your profile is currently under review. You’ll be
                             able to host gyms once approval is complete.
                         </div>
+                        @endif
                         {{-- @elseif(!$company->is_active)
                             <div class="alert alert-danger"
                                 style="background:#1d1d1d; border-color:#0dcaf0; color:#fff;"> <i
