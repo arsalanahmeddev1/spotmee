@@ -576,7 +576,11 @@
     <!-- CTA Button -->
     <div class="text-center"
          data-aos="fade-up" data-aos-delay="700">
+<<<<<<< HEAD
         <a href="#" class="cta-btn">
+=======
+        <a href="{{ route('blog') }}" class="cta-btn">
+>>>>>>> 219c0bdd56f9313a1f0ca983213b6bbf20a6fa5d
             Visit Blog
         </a>
     </div>

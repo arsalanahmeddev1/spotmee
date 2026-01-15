@@ -5,7 +5,7 @@
                 <div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24">
                     <!-- Brand Section -->
                     <div class="max-w-sm">
-                        <a href="/" class="block mb-8">
+                        <a href="{{ route('home') }}" class="block mb-8">
 
                             <img src="{{ asset('images/header-logo.png') }}" alt="Spotmee Find Your Space"
                                 class="h-32 w-auto object-contain">
@@ -21,11 +21,11 @@
                         <div class="space-y-6">
                             <h3 class="footer-h3">Explore</h3>
                             <ul class="space-y-2">
-                                <li><a href="#" class="footer-link">Find a Gym</a></li>
-                                <li><a href="#" class="footer-link">Become a Host</a></li>
-                                <li><a href="#" class="footer-link">How It Works</a></li>
+                                <li><a href="{{ route('find-a-gym') }}" class="footer-link">Find a Gym</a></li>
+                                <li><a href="{{ route('become-a-host') }}" class="footer-link">Become a Host</a></li>
+                                <li><a href="{{ route('how-it-works') }}" class="footer-link">How It Works</a></li>
                                 <li><a href="#" class="footer-link">Community Hub</a></li>
-                                <li><a href="#" class="footer-link">Blog</a></li>
+                                <li><a href="{{ route('blog') }}" class="footer-link">Blog</a></li>
                             </ul>
                         </div>
 
@@ -34,7 +34,7 @@
                             <h3 class="footer-h3">Support</h3>
                             <ul class="space-y-2">
                                 <li><a href="#" class="footer-link">Help Center</a></li>
-                                <li><a href="#" class="footer-link">Contact Us</a></li>
+                                <li><a href="{{ route('contact') }}" class="footer-link">Contact Us</a></li>
                                 <li><a href="#" class="footer-link">Safety Guidelines</a></li>
                                 <li><a href="#" class="footer-link">FAQs</a></li>
                                 <li><a href="#" class="footer-link">Hosting Tips</a></li>
@@ -105,7 +105,7 @@
             <!-- Copyright Bar -->
             <div class="bg-[#4682B4] py-4 w-full mb-5">
                 <p class="text-center text-[#FFFFFF] text-[20px] font-regular">
-                    © 2025 SPOTMEE. All rights reserved.
+                    © 2026 SPOTMEE. All rights reserved.
                 </p>
             </div>
         </div>

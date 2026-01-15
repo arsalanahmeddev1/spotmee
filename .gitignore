@@ -19,6 +19,13 @@
 /storage/*.key
 /storage/pail
 /vendor
+<<<<<<< HEAD
 Homestead.json
 Homestead.yaml
 Thumbs.db
+=======
+/public
+Homestead.json
+Homestead.yaml
+Thumbs.db
+>>>>>>> 219c0bdd56f9313a1f0ca983213b6bbf20a6fa5d
