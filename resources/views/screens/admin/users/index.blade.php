@@ -49,28 +49,21 @@
                                                 <td>
                                                     <p>{{ $user->created_at->format('d M Y, H:i A') }}</p>
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     <div class="common-align gap-2 justify-content-start">
-                                                        {{-- <a class="square-white" href="add-user.html">
+                                                        <a class="square-white" href="add-user.html">
                                                             <span><i class="fa-solid fa-pen"></i></span>
                                                         </a>
                                                         <a class="square-white trash-7" href="#!">
                                                             <span><i class="fa-solid fa-trash"></i></span>
-                                                        </a> --}}
-                                                        {{-- add view icon --}}
+                                                        </a>
                                                         <a class="square-white" href="#!">
                                                             <span><i class="fa-solid fa-eye"></i></span>
                                                         </a>
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                                 <td>
-                                                    <div class="form-check form-switch form-check-inline custom-switch">
-                                                        {{-- <input
-                                                            class="form-check-input switch-primary check-size approve-toggle"
-                                                            type="checkbox" role="switch" data-id="{{ $user->id }}"
-                                                            {{ $user->approval_status === 'approved' ? 'checked' : '' }}
-                                                            {{ $user->approval_status === 'pending' ? 'disabled' : '' }}
-                                                            > --}}
+                                                    <div class="form-check form-switch form-check-inline custom-switch ps-0">
                                                         <select class="form-select approval-select"
                                                             data-id="{{ $user->id }}"
                                                             data-current="{{ $user->approval_status }}">

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -9,11 +10,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $authUser = current_user();
-
-        $users = User::with('roles')
-            ->where('id', '!=', $authUser->id)
-            ->paginate(10);
+        $users = User::role('user')->paginate(10);
         return view('screens.admin.users.index', compact('users'));
     }
 

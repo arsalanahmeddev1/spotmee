@@ -25,7 +25,6 @@ class CmsModulePermissions extends Seeder
         $modules = [
             'dashboard' => CmsModule::where('route_name', 'admin.dashboard')->first(),
             'users' => CmsModule::where('route_name', 'users-module')->first(),
-            'hosts' => CmsModule::where('route_name', 'hosts-module')->first(),
             'gyms' => CmsModule::where('route_name', 'gyms-module')->first(),
         ];
 
@@ -34,16 +33,13 @@ class CmsModulePermissions extends Seeder
             'users.index' => CmsModule::where('route_name', 'users.index')->first(),
             'users.create' => CmsModule::where('route_name', 'users.create')->first(),
             'hosts.index' => CmsModule::where('route_name', 'hosts.index')->first(),
-            'hosts.create' => CmsModule::where('route_name', 'hosts.create')->first(),
             'gyms.index' => CmsModule::where('route_name', 'gyms.index')->first(),
-            'gyms.create' => CmsModule::where('route_name', 'gyms.create')->first(),
         ];
 
         $permissions = [
             // admin modules
             ['role_id' => $adminRole->id, 'module_id' => $modules['dashboard']->id ?? null, 'is_add' => 0, 'is_view' => 1, 'is_update' => 0, 'is_delete' => 0], // Dashboard
             ['role_id' => $adminRole->id, 'module_id' => $modules['users']->id ?? null, 'is_add' => 1, 'is_view' => 1, 'is_update' => 0, 'is_delete' => 0], // Users
-            ['role_id' => $adminRole->id, 'module_id' => $modules['hosts']->id ?? null, 'is_add' => 1, 'is_view' => 1, 'is_update' => 0, 'is_delete' => 0], // Hosts
             ['role_id' => $adminRole->id, 'module_id' => $modules['gyms']->id ?? null, 'is_add' => 1, 'is_view' => 1, 'is_update' => 0, 'is_delete' => 0], // gyms
             // Submenus
             ['role_id' => $adminRole->id, 'module_id' => $submenus['users.index']->id ?? null, 'is_add' => 0, 'is_view' => 1, 'is_update' => 1, 'is_delete' => 0], // All Users (users.index)

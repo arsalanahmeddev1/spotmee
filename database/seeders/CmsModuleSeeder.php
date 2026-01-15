@@ -29,18 +29,9 @@ class CmsModuleSeeder extends Seeder
         $users = CmsModule::firstOrCreate([
             'route_name' => 'users-module'
         ], [
-            'name' => 'Users',
+            'name' => 'User Management',
             'icon' => 'fa-solid fa-users',
             'sort_order' => 2,
-            'status' => 'active',
-            'parent_id' => 0,
-        ]);
-        $hosts = CmsModule::firstOrCreate([
-            'route_name' => 'hosts-module'
-        ], [
-            'name' => 'Hosts',
-            'icon' => 'fa-solid fa-users',
-            'sort_order' => 3,
             'status' => 'active',
             'parent_id' => 0,
         ]);
@@ -73,9 +64,9 @@ class CmsModuleSeeder extends Seeder
         ], [
             'name' => 'All Hosts',
             'icon' => 'fa-solid fa-list-ul',
-            'sort_order' => 1,
+            'sort_order' => 2,
             'status' => 'active',
-            'parent_id' => $hosts->id,
+            'parent_id' => $users->id,
         ]);
         CmsModule::firstOrCreate([
             'route_name' => 'gyms.index'

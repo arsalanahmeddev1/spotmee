@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\MembershipController;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Admin\UsersController as AdminUsersController;
+use App\Http\Controllers\Admin\HostController as AdminHostController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\Admin\ContractorApprovalController as AdminContractorApprovalController;
-use App\Http\Controllers\Admin\ServiceCategoryController as AdminServiceCategoryController;
+use App\Http\Controllers\GymController;
+
 // Web Routes
 Route::get(
     '/',
@@ -65,18 +66,28 @@ Route::get(
 
 // admin routes
 Route::prefix('admin')->middleware('auth')->group(function () {
+
+    // every user can access these pages dashboard 
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-   
-    Route::post('/users', [UsersController::class, 'store'])->name('users.store');
-    Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships.index');
-    Route::middleware(['auth', 'company.approved'])->group(function () {
-    });
-    Route::middleware(['auth', 'admin.middleware'])->group(function () {
-        Route::get('/users', [UsersController::class, 'index'])->name('users.index');
-        Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
-    });
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::post('/admin/users', [UsersController::class, 'ajaxToggle'])->name('admin.users.approval');
+    Route::post('/admin/users', [AdminUsersController::class, 'ajaxToggle'])->name('admin.users.approval');
+    Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships.index');
+
+    // admin middleware
+    Route::middleware(['auth', 'admin.middleware'])->group(function () {
+        Route::get('/users', [AdminUsersController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [AdminUsersController::class, 'create'])->name('users.create');
+        Route::post('/users', [AdminUsersController::class, 'store'])->name('users.store');
+        Route::get('/hosts', [AdminHostController::class, 'index'])->name('hosts.index');
+    });
+
+    // hosts middleware
+    Route::middleware(['auth', 'host.middleware'])->group(function () {
+        Route::get('/gyms', [GymController::class, 'index'])->name('gyms.index');
+        Route::get('/gyms/create', [GymController::class, 'create'])->name('gyms.create');
+    });
+
+    
 });
 
 

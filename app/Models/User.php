@@ -59,4 +59,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(User::class, 'created_by');
     }
+
+    public function scopeRole($query, $role)
+    {
+        return $query->whereHas('roles', function ($q) use ($role) {
+            $q->where('name', $role);
+        });
+    }
 }
