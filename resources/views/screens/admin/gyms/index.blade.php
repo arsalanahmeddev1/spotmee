@@ -15,14 +15,26 @@
                     <div class="card-body pt-0 px-0">
                         <div class="list-product user-list-table">
                             <div class="table-responsive custom-scrollbar">
-                                <table class="table" id="users-table">
+                                <table class="table" id="gyms-table">
                                     <thead>
                                         <tr>
                                             <th>
-                                                <span class="c-o-light f-w-600">Gym Name</span>
+                                                <span class="c-o-light f-w-600">Image</span>
                                             </th>
                                             <th>
-                                                <span class="c-o-light f-w-600">Creation Date</span>
+                                                <span class="c-o-light f-w-600">Name</span>
+                                            </th>
+                                            <th>
+                                                <span class="c-o-light f-w-600">Price</span>
+                                            </th>
+                                            <th>
+                                                <span class="c-o-light f-w-600">Category</span>
+                                            </th>
+                                            <th>
+                                                <span class="c-o-light f-w-600">Location</span>
+                                            </th>
+                                            <th>
+                                                <span class="c-o-light f-w-600">Phone</span>
                                             </th>
                                             <th>
                                                 <span class="c-o-light f-w-600">Actions</span>
@@ -30,24 +42,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @forelse ($users as $user) --}}
+                                        @forelse ($gyms as $gym)
                                         <tr class="product-removes inbox-data">
-                                            <td><a href="">Gym Name</a></td>
+                                            <td>
+                                                <div class="product-img">
+                                                    <img src="{{ asset($gym->image) }}" alt="{{ $gym->name }}"
+                                                        style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="f-w-600 mb-0">{{ $gym->name }}</p>
+                                            </td>
+                                            <td>${{ number_format($gym->price, 2) }}</td>
+                                            <td class="text-capitalize">{{ str_replace('_', ' ', $gym->category) }}</td>
+                                            <td>{{ $gym->city }}, {{ $gym->state }}</td>
+                                            <td>{{ $gym->phone }}</td>
                                             <td>
                                                 <div class="common-align gap-2 justify-content-start">
-                                                    <a class="square-white" href="#!">
-                                                        <span><i class="fa-solid fa-eye"></i></span>
+                                                    <a class="square-white" href="{{ route('gyms.edit', ['id' => $gym->id]) }}">
+                                                        <span><i class="fa-solid fa-pencil"></i></span>
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr>
-                                        {{-- @empty --}}
-                                        {{-- <tr>
-                                            <td colspan="6" class="text-center">
-                                                <h3 class="pt-5">No @yield('title', 'Dashboard') Found</h3>
+                                        @empty
+                                        <tr>
+                                            <td colspan="7" class="text-center">
+                                                <h3 class="pt-5">No Gyms Found</h3>
                                             </td>
-                                        </tr> --}}
-                                        {{-- @endforelse --}}
+                                        </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class GymController extends Controller
 {
     public function Index() {
-        return view('screens.admin.gyms.index');
+        $gyms = \App\Models\Gym::latest()->get();
+        return view('screens.admin.gyms.index', compact('gyms'));
     }
     public function create() {
         return view('screens.admin.gyms.create');
